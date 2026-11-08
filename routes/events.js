@@ -17,7 +17,7 @@ const toId = (id) =>
   ObjectId.isValid(id) ? new ObjectId(id) : null;
 
 
-// GET ALL UPCOMING EVENTS + SEARCH AND FILTER
+// GET ALL UPCOMING EVENTS + optional SEARCH AND FILTER
 
 router.get("/", async (req, res) => {
   const { events } = await collections();
