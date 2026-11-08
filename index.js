@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
+import eventRoutes from "./routes/events.js";
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -13,6 +14,7 @@ app.get("/", (req, res) => {
 });
 
 // ROUTES GO HERE
+app.use("/events", eventRoutes);
 
 // catch any error so we never leak a stack trace
 app.use((err, req, res, next) => {
